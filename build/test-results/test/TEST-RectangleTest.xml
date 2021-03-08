@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="RectangleTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-03-08T12:51:15" hostname="DESKTOP-AB0UK2U" time="0.021">
+  <properties/>
+  <testcase name="testAreaOfRectangleWithNegativeValuedSides()" classname="RectangleTest" time="0.019"/>
+  <testcase name="testAreaOfRectangleWithPositiveValuedSides()" classname="RectangleTest" time="0.001"/>
+  <testcase name="testAreaOfRectangleWithNullValuedSides()" classname="RectangleTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
