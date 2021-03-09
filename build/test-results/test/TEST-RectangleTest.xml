@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RectangleTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-03-08T13:10:20" hostname="DESKTOP-AB0UK2U" time="0.025">
+<testsuite name="RectangleTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-03-09T05:32:39" hostname="DESKTOP-AB0UK2U" time="0.038">
   <properties/>
-  <testcase name="testPerimeterOfRectangleWithNullValuedSides()" classname="RectangleTest" time="0.02"/>
-  <testcase name="testAreaOfRectangleWithNegativeValuedSides()" classname="RectangleTest" time="0.0"/>
-  <testcase name="testAreaOfRectangleWithPositiveValuedSides()" classname="RectangleTest" time="0.0"/>
-  <testcase name="testPerimeterOfRectangleWithNegativeValuedSides()" classname="RectangleTest" time="0.0"/>
-  <testcase name="testPerimeterOfRectangleWithPositiveValuedSides()" classname="RectangleTest" time="0.0"/>
-  <testcase name="testAreaOfRectangleWithNullValuedSides()" classname="RectangleTest" time="0.0"/>
+  <testcase name="testChangedToPositiveValuedAreaForNegativeValuedSides()" classname="RectangleTest" time="0.032"/>
+  <testcase name="testNullValuedAreaForNullValuedSides()" classname="RectangleTest" time="0.001"/>
+  <testcase name="testChangedToPositiveValuedPerimeterForNegativeValuedSides()" classname="RectangleTest" time="0.001"/>
+  <testcase name="testPositiveValuedAreaForPositiveValuedSides()" classname="RectangleTest" time="0.0"/>
+  <testcase name="testNullValuedPerimeterForNullValuedSides()" classname="RectangleTest" time="0.0"/>
+  <testcase name="testPositiveValuedPerimeterForPositiveValuedSides()" classname="RectangleTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

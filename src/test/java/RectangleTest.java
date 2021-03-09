@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RectangleTest {
 
     @Test
-    public void testAreaOfRectangleWithPositiveValuedSides() {
+    public void testPositiveValuedAreaForPositiveValuedSides() { //testForAreaOfRectangle
         int length=5;
         int breadth=4;
         int expectedArea=length*breadth;
@@ -14,7 +14,7 @@ class RectangleTest {
     }
 
     @Test
-    public void testAreaOfRectangleWithNullValuedSides() {
+    public void testNullValuedAreaForNullValuedSides() {
         int length=0;
         int breadth=0;
         int expectedArea=0;
@@ -24,7 +24,7 @@ class RectangleTest {
     }
 
     @Test
-    public void testAreaOfRectangleWithNegativeValuedSides() {
+    public void testChangedToPositiveValuedAreaForNegativeValuedSides() {
         int length=5;
         int breadth=-4;
         int expectedArea=20;
@@ -34,7 +34,7 @@ class RectangleTest {
     }
 
     @Test
-    public void testPerimeterOfRectangleWithPositiveValuedSides() {
+    public void testPositiveValuedPerimeterForPositiveValuedSides() {
         int length=5;
         int breadth=4;
         int expectedArea=2*(length+breadth);
@@ -44,7 +44,7 @@ class RectangleTest {
     }
 
     @Test
-    public void testPerimeterOfRectangleWithNullValuedSides() {
+    public void testNullValuedPerimeterForNullValuedSides() {
         int length=0;
         int breadth=0;
         int expectedArea=0;
@@ -54,7 +54,7 @@ class RectangleTest {
     }
 
     @Test
-    public void testPerimeterOfRectangleWithNegativeValuedSides() {
+    public void testChangedToPositiveValuedPerimeterForNegativeValuedSides() {
         int length=5;
         int breadth=-4;
         int expectedArea=18;
