@@ -1,14 +1,21 @@
 public class Rectangle {
-    private int length;
-    private int breadth;
+    private final int length;
+    private final int breadth;
 
-    public Rectangle(int length, int breadth) {
-        this.length = negateIfNegativeValuedSide(length);
-        this.breadth = negateIfNegativeValuedSide(breadth);
+    public Rectangle(int side) {
+        if(side < 0){
+            throw new ArithmeticException("Sides Of a Square should not have a negative value");
+        }
+        this.length = side;
+        this.breadth = side;
     }
 
-    public int negateIfNegativeValuedSide(int inputSideValue) {
-        return (inputSideValue < 0) ? inputSideValue * (-1) : inputSideValue;
+    public Rectangle(int length, int breadth) {
+        if(length < 0 || breadth < 0){
+            throw new ArithmeticException("Sides Of a Rectangle should not have a negative value");
+        }
+        this.length = length;
+        this.breadth = breadth;
     }
 
     public int area() {
@@ -18,6 +25,5 @@ public class Rectangle {
     public int perimeter() {
         return 2 * (length + breadth);
     }
-
 
 }

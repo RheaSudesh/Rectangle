@@ -1,66 +1,108 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class RectangleTest {
 
     @Test
-    public void testPositiveValuedAreaForPositiveValuedSides() { //testForAreaOfRectangle
-        int length=5;
-        int breadth=4;
-        int expectedArea=length*breadth;
-        Rectangle rectangleWithPositiveValuedSides=new Rectangle(length,breadth);
-        int actualArea=rectangleWithPositiveValuedSides.area();
+    public void testPositiveValuedAreaForPositiveValuedSides() {
+        int length = 5;
+        int breadth = 4;
+        int expectedArea = 20;
+
+        Rectangle rectangleWithPositiveValuedSides = new Rectangle(length,breadth);
+        int actualArea = rectangleWithPositiveValuedSides.area();
+
         assertEquals(expectedArea,actualArea);
     }
 
     @Test
-    public void testNullValuedAreaForNullValuedSides() {
-        int length=0;
-        int breadth=0;
-        int expectedArea=0;
-        Rectangle rectangleWithZeroValuedSides=new Rectangle(length,breadth);
-        int actualArea=rectangleWithZeroValuedSides.area();
+    public void testZeroValuedAreaForZeroValuedSides() {
+        int length = 0;
+        int breadth = 0;
+        int expectedArea = 0;
+
+        Rectangle rectangleWithZeroValuedSides = new Rectangle(length,breadth);
+        int actualArea = rectangleWithZeroValuedSides.area();
+
         assertEquals(expectedArea,actualArea);
     }
 
     @Test
-    public void testChangedToPositiveValuedAreaForNegativeValuedSides() {
-        int length=5;
-        int breadth=-4;
-        int expectedArea=20;
-        Rectangle rectangleWithNegativeValuedSides=new Rectangle(length,breadth);
-        int actualArea=rectangleWithNegativeValuedSides.area();
-        assertEquals(expectedArea,actualArea);
+    public void testThrowsExceptionForNegativeValuedSides() {
+        int length = 5;
+        int breadth = -4;
+
+        Exception exception = (Exception) assertThrows(ArithmeticException.class, () ->{ new Rectangle(length,breadth); });
     }
 
     @Test
     public void testPositiveValuedPerimeterForPositiveValuedSides() {
-        int length=5;
-        int breadth=4;
-        int expectedArea=2*(length+breadth);
-        Rectangle rectangleWithPositiveValuedSides=new Rectangle(length,breadth);
-        int actualArea=rectangleWithPositiveValuedSides.perimeter();
+        int length = 5;
+        int breadth = 4;
+        int expectedPerimeter = 18;
+
+        Rectangle rectangleWithPositiveValuedSides = new Rectangle(length,breadth);
+
+        int actualPerimeter = rectangleWithPositiveValuedSides.perimeter();
+        assertEquals(expectedPerimeter,actualPerimeter);
+    }
+
+    @Test
+    public void testZeroValuedPerimeterForZeroValuedSides() {
+        int length = 0;
+        int breadth = 0;
+        int expectedPerimeter = 0;
+
+        Rectangle rectangleWithNullValuedSides = new Rectangle(length,breadth);
+        int actualPerimeter = rectangleWithNullValuedSides.perimeter();
+
+        assertEquals(expectedPerimeter,actualPerimeter);
+    }
+
+    @Test
+    public void testPositiveValuedAreaForPositiveValuedSideOfSquare() {
+        int side = 3;
+        int expectedArea = 9;
+
+        Rectangle squareWithPositiveValuedSide = new Rectangle(side);
+        int actualArea = squareWithPositiveValuedSide.area();
+
         assertEquals(expectedArea,actualArea);
     }
 
     @Test
-    public void testNullValuedPerimeterForNullValuedSides() {
-        int length=0;
-        int breadth=0;
-        int expectedArea=0;
-        Rectangle rectangleWithNullValuedSides=new Rectangle(length,breadth);
-        int actualArea=rectangleWithNullValuedSides.perimeter();
+    public void testZeroValuedAreaForZeroValuedSidesOfSquare() {
+        int side = 0;
+        int expectedArea = 0;
+
+        Rectangle squareWithZeroValuedSide = new Rectangle(side);
+        int actualArea = squareWithZeroValuedSide.area();
+
         assertEquals(expectedArea,actualArea);
     }
 
     @Test
-    public void testChangedToPositiveValuedPerimeterForNegativeValuedSides() {
-        int length=5;
-        int breadth=-4;
-        int expectedArea=18;
-        Rectangle rectangleWithNegativeValuedSides=new Rectangle(length,breadth);
-        int actualArea=rectangleWithNegativeValuedSides.perimeter();
+    public void testPositiveValuedPerimeterForPositiveValuedSideOfSquare() {
+        int side = 3;
+        int expectedArea = 12;
+
+        Rectangle squareWithPositiveValuedSide = new Rectangle(side);
+        int actualArea = squareWithPositiveValuedSide.perimeter();
+
         assertEquals(expectedArea,actualArea);
     }
+
+    @Test
+    public void testZeroValuedPerimeterForZeroValuedSidesOfSquare() {
+        int side = 0;
+        int expectedArea = 0;
+
+        Rectangle squareWithZeroValuedSide = new Rectangle(side);
+        int actualArea = squareWithZeroValuedSide.perimeter();
+
+        assertEquals(expectedArea,actualArea);
+    }
+
 
 }
