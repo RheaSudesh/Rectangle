@@ -2,17 +2,13 @@ public class Rectangle {
     private final int length;
     private final int breadth;
 
-    public Rectangle(int side) {
-        if(side <= 0){
-            throw new IllegalArgumentException("Side Of a Square should not have a negative value");
-        }
-        this.length = side;
-        this.breadth = side;
+    public static Rectangle createSquare(int side) {
+        return new Rectangle(side, side);
     }
 
     public Rectangle(int length, int breadth) {
-        if(length <= 0 || breadth <= 0){
-            throw new IllegalArgumentException("Sides Of a Rectangle should not have a negative value");
+        if (length <= 0 || breadth <= 0) {
+            throw new IllegalArgumentException("Sides Of a Geometrical Shape should not have a negative or zero value");
         }
         this.length = length;
         this.breadth = breadth;

@@ -1,6 +1,2 @@
-SquareTest.java
- SquareTest
 RectangleTest.java
  RectangleTest
-TestAll.java
- TestAll

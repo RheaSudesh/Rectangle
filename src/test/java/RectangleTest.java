@@ -21,7 +21,7 @@ class RectangleTest {
         int length = 0;
         int breadth = 0;
 
-        assertThrows( IllegalArgumentException.class, () ->new Rectangle(length,breadth));
+       assertThrows( IllegalArgumentException.class, () ->new Rectangle(length,breadth));
     }
 
     @Test
@@ -49,7 +49,7 @@ class RectangleTest {
         int side = 3;
         int expectedArea = 9;
 
-        Rectangle squareWithPositiveValuedSide = new Rectangle(side);
+        Rectangle squareWithPositiveValuedSide = Rectangle.createSquare(side);
         int actualArea = squareWithPositiveValuedSide.area();
 
         assertEquals(expectedArea,actualArea);
@@ -59,14 +59,14 @@ class RectangleTest {
     public void testThrowsExceptionForZeroValuedSidesOfSquare() {
         int side = 0;
 
-        assertThrows( IllegalArgumentException.class, () ->new Rectangle(side));
+        assertThrows( IllegalArgumentException.class, () ->Rectangle.createSquare(side));
     }
 
     @Test
     public void testThrowsExceptionForNegativeValuedSideOfSqaure() {
         int side=-10;
 
-        assertThrows( IllegalArgumentException.class, () ->new Rectangle(side));
+        assertThrows( IllegalArgumentException.class, () -> Rectangle.createSquare(side));
     }
 
     @Test
@@ -74,9 +74,8 @@ class RectangleTest {
         int side = 3;
         int expectedPerimeter = 12;
 
-        Rectangle squareWithPositiveValuedSide = new Rectangle(side);
+        Rectangle squareWithPositiveValuedSide = Rectangle.createSquare(side);
         int actualPerimeter = squareWithPositiveValuedSide.perimeter();
-
         assertEquals(expectedPerimeter,actualPerimeter);
     }
 
