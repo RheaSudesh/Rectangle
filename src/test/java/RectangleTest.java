@@ -17,15 +17,11 @@ class RectangleTest {
     }
 
     @Test
-    public void testZeroValuedAreaForZeroValuedSides() {
+    public void testThrowsExceptionForZeroValuedSides() {
         int length = 0;
         int breadth = 0;
-        int expectedArea = 0;
 
-        Rectangle rectangleWithZeroValuedSides = new Rectangle(length,breadth);
-        int actualArea = rectangleWithZeroValuedSides.area();
-
-        assertEquals(expectedArea,actualArea);
+        assertThrows( IllegalArgumentException.class, () ->new Rectangle(length,breadth));
     }
 
     @Test
@@ -33,7 +29,7 @@ class RectangleTest {
         int length = 5;
         int breadth = -4;
 
-        Exception exception = (Exception) assertThrows(ArithmeticException.class, () ->{ new Rectangle(length,breadth); });
+        assertThrows( IllegalArgumentException.class, () ->new Rectangle(length,breadth));
     }
 
     @Test
@@ -43,19 +39,7 @@ class RectangleTest {
         int expectedPerimeter = 18;
 
         Rectangle rectangleWithPositiveValuedSides = new Rectangle(length,breadth);
-
         int actualPerimeter = rectangleWithPositiveValuedSides.perimeter();
-        assertEquals(expectedPerimeter,actualPerimeter);
-    }
-
-    @Test
-    public void testZeroValuedPerimeterForZeroValuedSides() {
-        int length = 0;
-        int breadth = 0;
-        int expectedPerimeter = 0;
-
-        Rectangle rectangleWithNullValuedSides = new Rectangle(length,breadth);
-        int actualPerimeter = rectangleWithNullValuedSides.perimeter();
 
         assertEquals(expectedPerimeter,actualPerimeter);
     }
@@ -72,37 +56,28 @@ class RectangleTest {
     }
 
     @Test
-    public void testZeroValuedAreaForZeroValuedSidesOfSquare() {
+    public void testThrowsExceptionForZeroValuedSidesOfSquare() {
         int side = 0;
-        int expectedArea = 0;
 
-        Rectangle squareWithZeroValuedSide = new Rectangle(side);
-        int actualArea = squareWithZeroValuedSide.area();
+        assertThrows( IllegalArgumentException.class, () ->new Rectangle(side));
+    }
 
-        assertEquals(expectedArea,actualArea);
+    @Test
+    public void testThrowsExceptionForNegativeValuedSideOfSqaure() {
+        int side=-10;
+
+        assertThrows( IllegalArgumentException.class, () ->new Rectangle(side));
     }
 
     @Test
     public void testPositiveValuedPerimeterForPositiveValuedSideOfSquare() {
         int side = 3;
-        int expectedArea = 12;
+        int expectedPerimeter = 12;
 
         Rectangle squareWithPositiveValuedSide = new Rectangle(side);
-        int actualArea = squareWithPositiveValuedSide.perimeter();
+        int actualPerimeter = squareWithPositiveValuedSide.perimeter();
 
-        assertEquals(expectedArea,actualArea);
+        assertEquals(expectedPerimeter,actualPerimeter);
     }
-
-    @Test
-    public void testZeroValuedPerimeterForZeroValuedSidesOfSquare() {
-        int side = 0;
-        int expectedArea = 0;
-
-        Rectangle squareWithZeroValuedSide = new Rectangle(side);
-        int actualArea = squareWithZeroValuedSide.perimeter();
-
-        assertEquals(expectedArea,actualArea);
-    }
-
 
 }

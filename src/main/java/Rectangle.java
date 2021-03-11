@@ -3,16 +3,16 @@ public class Rectangle {
     private final int breadth;
 
     public Rectangle(int side) {
-        if(side < 0){
-            throw new ArithmeticException("Sides Of a Square should not have a negative value");
+        if(side <= 0){
+            throw new IllegalArgumentException("Side Of a Square should not have a negative value");
         }
         this.length = side;
         this.breadth = side;
     }
 
     public Rectangle(int length, int breadth) {
-        if(length < 0 || breadth < 0){
-            throw new ArithmeticException("Sides Of a Rectangle should not have a negative value");
+        if(length <= 0 || breadth <= 0){
+            throw new IllegalArgumentException("Sides Of a Rectangle should not have a negative value");
         }
         this.length = length;
         this.breadth = breadth;
